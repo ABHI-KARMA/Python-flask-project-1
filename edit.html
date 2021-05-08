@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="TemplateMo">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700" rel="stylesheet">
+
+    <title>Web-Blog - Edit</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="{{url_for('static',filename='bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{url_for('static',filename='css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/templatemo-host-cloud.css')}}">
+    <link rel="stylesheet" href="{{url_for('static',filename='css/owl.css')}}">
+    <!--
+
+Host Cloud Template
+
+https://templatemo.com/tm-541-host-cloud
+
+-->
+</head>
+
+<body>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="/">
+                    <h2>WEB <em>Blog</em></h2>
+                </a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" href="/">Home
+                  <span class="sr-only">(current)</span>
+                </a>
+                        </li>
+
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/all_blogs">All Blogs</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/contact">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="functional-buttons">
+                    <ul>
+                        <li><a href="/logout">Log-out</a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Heading Starts Here -->
+    <div class="page-heading header-text">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <h1>All Blogs</h1>
+                    <p><a href="/">Home</a> / <span>Edit</span></p>
+                    <a href="/dashboard"><button class="btn btn-primary my-4">Dashboard</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Heading Ends Here -->
+    <!-- Container Starts here -->
+    <div class="container">
+        <h1></h1>
+        <div class="row">
+            <div class="col-lg-8 col-md-10 mx-auto">
+                <form name="sentMessage" id="contactForm" action="/edit/{{post.slug}}" method="POST" novalidate>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Title</label>
+                            <input type="text" class="form-control" placeholder="Title" id="title" name="title" value="{{post.title}}" required data-validation-required-message="Please enter your name.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Subtitle</label>
+                            <input type="text" class="form-control" placeholder="Subtitle" id="subtitle" name="subtitle" value="{{post.subtitle}}" required data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group floating-label-form-group controls">
+                            <label>Slug</label>
+                            <input type="text" class="form-control" placeholder="Slug" id="slug" name="slug" value="{{post.slug}}" required data-validation-required-message="Please enter your email address.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                    </div>
+                    <div class="control-group">
+                        <div class="form-group col-xs-12 floating-label-form-group controls">
+                            <label>Content</label>
+                            <input type="text" class="form-control" placeholder="Content" id="content" name="content" value="{{post.content}}" required data-validation-required-message="Please enter your phone number.">
+                            <p class="help-block text-danger"></p>
+                        </div>
+                        <br>
+                        <div id="success"></div>
+                        <button type="submit" class="btn btn-primary" id="sendMessageButton">Submit</button>
+                </form>
+                </div>
+            </div>
+        </div>
+        <!-- Container enda here -->
+
+        <!-- Bootstrap core JavaScript -->
+        <script src="{{url_for('static',filename='jquery/jquery.min.js')}}"></script>
+        <script src="{{url_for('static',filename='bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+
+        <!-- Additional Scripts -->
+        <script src="{{url_for('static',filename='js/custom.js')}}"></script>
+        <script src="{{url_for('static',filename='js/owl.js')}}"></script>
+        <script src="{{url_for('static',filename='js/accordions.js')}}"></script>
+
+        <script language="text/Javascript">
+            cleared[0] = cleared[1] = cleared[2] = 0; //set a cleared flag for each field
+            function clearField(t) { //declaring the array outside of the
+                if (!cleared[t.id]) { // function makes it static and global
+                    cleared[t.id] = 1; // you could use true and false, but that's more typing
+                    t.value = ''; // with more chance of typos
+                    t.style.color = '#fff';
+                }
+            }
+        </script>
+
+</body>
+
+</html>
